@@ -6,6 +6,7 @@ import android.content.res.AssetManager;
 import android.content.res.TypedArray;
 import android.graphics.Matrix;
 import android.graphics.SurfaceTexture;
+import android.media.MediaDataSource;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import androidx.annotation.NonNull;
@@ -157,6 +158,11 @@ public class ScalableVideoView extends TextureView implements TextureView.Surfac
     public void setDataSource(@NonNull FileDescriptor fd) throws IOException {
         initializeMediaPlayer();
         mMediaPlayer.setDataSource(fd);
+    }
+
+    public void setDataSource(@NonNull MediaDataSource mediaDataSource) {
+        initializeMediaPlayer();
+        mMediaPlayer.setDataSource(mediaDataSource);
     }
 
     public void setScalableType(ScalableType scalableType) {
