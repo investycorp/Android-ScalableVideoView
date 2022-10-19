@@ -9,7 +9,7 @@ repositories {
     maven { url "https://jitpack.io" }
 }
 
-group = 'com.github.AdityaXJha'
+group = 'com.github.investycorp'
 version = '1.0.4'
 
 android {
@@ -44,7 +44,7 @@ afterEvaluate {
             // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.github.AdityaXJha'
+                groupId = 'com.github.investycorp'
                 artifactId = 'android-scalablevideoview'
                 version = '1.0.4'
             }
