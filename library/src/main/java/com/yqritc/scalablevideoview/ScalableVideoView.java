@@ -12,6 +12,8 @@ import android.net.Uri;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
+
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.Surface;
 import android.view.TextureView;
@@ -162,7 +164,10 @@ public class ScalableVideoView extends TextureView implements TextureView.Surfac
 
     public void setDataSource(@NonNull MediaDataSource mediaDataSource) {
         initializeMediaPlayer();
-        mMediaPlayer.setDataSource(mediaDataSource);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            mMediaPlayer.setDataSource(mediaDataSource);
+        }
     }
 
     public void setScalableType(ScalableType scalableType) {
