@@ -239,6 +239,12 @@ public class ScalableVideoView extends TextureView implements TextureView.Surfac
         mMediaPlayer.seekTo(msec);
     }
 
+    public void seekTo(int msec, int mode) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            mMediaPlayer.seekTo(msec, mode);
+        }
+    }
+
     public void setLooping(boolean looping) {
         mMediaPlayer.setLooping(looping);
     }
